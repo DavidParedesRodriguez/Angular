@@ -1,0 +1,9 @@
+.main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  button {
+    margin-right: 10px; /* Ajusta el margen entre los botones y el contador según tus preferencias */
+  }

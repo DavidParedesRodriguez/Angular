@@ -180,9 +180,10 @@
 
 <main class="main">
   
-    <button (click)="incrementar()">Sumar +1</button>
-    <h2>{{ contador }}</h2>
-    <button (click)="decrementar()">Restar -1</button>
+  
+  <button (click)="modificarContador(1)">Sumar con método +1</button>
+  <h2>{{ contador }}</h2>
+  <button (click)="modificarContador(-1)">Restar con método -1</button>
   
 </main>
 

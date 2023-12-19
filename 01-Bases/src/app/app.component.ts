@@ -24,4 +24,8 @@ export class AppComponent {
   decrementar() {
     this.contador--;
   }
+
+  modificarContador(valor: number) {
+    this.contador += valor;
+  }
 }
