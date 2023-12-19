@@ -1,9 +1,25 @@
 .main {
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px; 
+  }
+  
+  .buttons-container {
+    display: flex;
     align-items: center;
   }
   
   button {
-    margin-right: 10px; /* Ajusta el margen entre los botones y el contador según tus preferencias */
+    margin: 0 5px; 
   }
+  
+ 
+
+  

@@ -180,11 +180,14 @@
 
 <main class="main">
   
-  
-  <button (click)="modificarContador(1)">Sumar con método +1</button>
-  <h2>{{ contador }}</h2>
-  <button (click)="modificarContador(-1)">Restar con método -1</button>
-  
+  <div class="content">
+    <p>La base es: {{ base }}</p>
+    <div class="buttons-container">
+      <button (click)="sumarNumerico(5)">Sumar 5</button>
+      <h2>{{ baseTipoNumerico }}</h2>
+      <button (click)="restarNumerico(5)">Restar 5</button>
+    </div>
+  </div>
 </main>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
