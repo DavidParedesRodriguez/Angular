@@ -14,4 +14,14 @@ export class AppComponent {
 
  //cambia en la clase AppComponent el nombre del título a "contador App"
  titulo : string = 'contador app'
+
+ contador = 0;
+
+  incrementar() {
+    this.contador++;
+  }
+
+  decrementar() {
+    this.contador--;
+  }
 }
