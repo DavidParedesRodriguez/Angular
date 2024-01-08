@@ -1,49 +1,44 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import internal from 'stream';
+import { ContadorComponent } from './contador.component';
+import { heroeComponent } from './heroes/heroe/heroe.component';
+import { ListaComponent } from './heroes/lista/lista.component';
+import { ContadoresNuevoComponent } from './contadores-nuevo/contadores-nuevo.component';
+//importar ngMoudule ya que el archivo app.modules.ts ya no existe en las nuevas versiones de angular
+import { NgModule } from '@angular/core';
 
 @Component({
-  //esto es lo que se llama decorador
-  selector: 'app-root', //será la aplicación principal. Si nos vamos al index.html podemos ver el componente, pasando antes por otros procesos.
+  selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, ContadorComponent,heroeComponent,ListaComponent,ContadoresNuevoComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+ // templateUrl: './heroes/heroe/heroe.component.html',
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  // title = 'bases'; //nombre del proyecto
-
-  //cambia en la clase AppComponent el nombre del título a "contador App"
-  titulo: string = 'contador app';
-
-  contador = 0;
-
+  // ejercicio 1
+  title = 'bases';
   
 
-  incrementar() {
-    this.contador++;
+  //suma y resta numeros
+  num: number = 1;
+  resultado: number = 10;
+  sumar(): void {
+    this.resultado =  this.resultado + this.num;
+  }
+  restar(): void {
+    this.resultado =  this.resultado - this.num;
   }
 
-  decrementar() {
-    this.contador--;
+  //suma resta 5
+  num5: number = 5;
+  resultadocinco: number = 0;
+  sumarcinco(): void {
+    this.resultadocinco =  this.resultadocinco + this.num5;
   }
-
-  modificarContador(valor: number) {
-    this.contador += valor;
+  restarcinco(): void {
+    this.resultadocinco =  this.resultadocinco - this.num5;
   }
-
-
-  //ejercicio #3 Contador3
-
-  baseTipoNumerico: number = 5;
-  base : number = 5;
-
-  sumarNumerico(valor: number) {
-    this.baseTipoNumerico += valor;
-  }
-
-  restarNumerico(valor: number) {
-    this.baseTipoNumerico -= valor;
-  }
+  
 }
