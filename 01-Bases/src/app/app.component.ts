@@ -5,11 +5,12 @@ import { ContadorComponent } from './contador.component';
 import { heroeComponent } from './heroes/heroe/heroe.component';
 import { ListaComponent } from './heroes/lista/lista.component';
 import { ContadoresNuevoComponent } from './contadores-nuevo/contadores-nuevo.component';
+import { MainPageComponent } from './dbz/main-page/main-page.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, ContadorComponent, heroeComponent, ListaComponent, ContadoresNuevoComponent],
+  imports: [CommonModule, RouterOutlet, ContadorComponent, heroeComponent, ListaComponent, ContadoresNuevoComponent, MainPageComponent],
   templateUrl: './app.component.html',
  // templateUrl: './heroes/heroe/heroe.component.html',
   styleUrl: './app.component.scss'
