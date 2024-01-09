@@ -1,2 +1,48 @@
 <h2>{{ titulo }}</h2>
-<hr>
+<hr />
+<div class="container">
+  <div>
+    <h3 class="title">{{ personajes }}</h3>
+  </div>
+  <div>
+    <h3 class="title">{{ tituloPersonaje }}</h3>
+  </div>
+</div>
+<hr />
+
+<div class="container">
+  <div>
+    <ul>
+      <li *ngFor="let personaje of listaPersonajes">
+        {{ personaje.nombre }} -> {{ personaje.poder }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="form-container">
+    <form (ngSubmit)="agregarPersonaje()" #form="ngForm">
+      <label for="nombre">Nombre:</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        [(ngModel)]="nuevoPersonaje.nombre"
+        required
+        pattern="\S+"
+      />
+      <br />
+      <label for="poder">Poder:</label>
+      <input
+        type="number"
+        pattern="\d*"
+        id="poder"
+        name="poder"
+        [(ngModel)]="nuevoPersonaje.poder"
+        required
+      />
+      <br />
+      <button type="submit">Agregar</button>
+    </form>
+  </div>
+</div>
+<hr />
