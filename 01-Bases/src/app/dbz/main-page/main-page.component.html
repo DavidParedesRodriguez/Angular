@@ -1,35 +1,49 @@
-<h2>Dragon Ball Z</h2>
+<h2>{{ titulo }}</h2>
+<hr />
+<div class="container">
+  <div>
+    <h3 class="title">{{ personajes }}</h3>
+  </div>
+  <div>
+    <h3 class="title">{{ tituloPersonaje }}</h3>
+  </div>
+</div>
 <hr />
 
-<div class="row">
-  <div class="col">
-    <app-personajes [personaje]="personaje"></app-personajes>
-  </div>
-
-  <div class="col">
-    <app-agregar [nuevo]="nuevo"> </app-agregar>
-  </div>
-
+<div class="container">
   <div>
-    <h3>Agregar nuevo Personaje</h3>
-    <hr />
+    <ul>
+      <li *ngFor="let personaje of listaPersonajes">
+        {{ personaje.nombre }} -> {{ personaje.poder }}
+      </li>
+    </ul>
+  </div>
 
-    <form (ngSubmit)="agregar()">
+  <div class="form-container">
+    <form (ngSubmit)="agregarPersonaje()" #form="ngForm">
+      <label for="nombre">Nombre:</label>
       <input
         type="text"
-        placeholder="Nombre: "
+        id="nombre"
         name="nombre"
-        [(ngModel)]="nuevo.nombre"
+        [(ngModel)]="nuevoPersonaje.nombre"
+        required
+        pattern="\S+"
       />
-
+      <br />
+      <label for="poder">Poder:</label>
       <input
         type="number"
-        placeholder="poder: "
+        pattern="\d*"
+        id="poder"
         name="poder"
-        [(ngModel)]="nuevo.poder"
+        [(ngModel)]="nuevoPersonaje.poder"
+        required
       />
-
+      <br />
       <button type="submit">Agregar</button>
     </form>
   </div>
 </div>
+<hr />
+
