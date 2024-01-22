@@ -1,6 +1,5 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms'; // Importa FormsModule
+import { Personaje } from '../interfaces/dbz.interfaces';
 
 interface Personaje {
   //crreamos una interface
@@ -10,22 +9,27 @@ interface Personaje {
 
 @Component({
   selector: 'app-main-page',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
   templateUrl: './main-page.component.html',
-  styleUrl: './main-page.component.css',
+ 
 })
 export class MainPageComponent {
-  nuevo: Personaje = {
-    nombre: "",
-    poder: 0,
-  };
 
-  agregar() {
-    if(this.nuevo.nombre.trim().length === 0){
-      return
-    }
-    console.log(this.nuevo);
-  }
   
+personaje : Personaje[] = [
+  {
+    nombre: 'Goku',
+    poder: 15000
+  },
+  {
+    nombre: 'Vegeta',
+    poder: 7500
+  }
+];
+
+
+nuevo: Personaje = {
+  nombre: "Genio Tortuga",
+  poder: 1000
+}
+
 }

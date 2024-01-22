@@ -1,14 +1,14 @@
 import { Component, Input } from '@angular/core';
+import { Personaje } from '../interfaces/dbz.interfaces';
 
 @Component({
   selector: 'app-personajes',
-  standalone: true,
-  imports: [],
   templateUrl: './personajes.component.html',
-  styleUrl: './personajes.component.css'
+  styleUrls: ['./personajes.component.scss']
 })
+
 export class PersonajesComponent {
 
-@Input() personaje:any[] = [];//le decimos que estos personajes van a venir del padre
+@Input() personaje:Personaje[] = [];//le decimos que estos personajes van a venir del padre
 
 }
