@@ -5,7 +5,17 @@
   "projects": {
     "gifsApp": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -98,6 +108,6 @@
     }
   },
   "cli": {
-    "analytics": "f1b1d699-4a35-45ed-8bd2-b0cc8c40ab7d"
+    "analytics": "47b840e4-7f78-4a24-a972-01853aea4644"
   }
 }
