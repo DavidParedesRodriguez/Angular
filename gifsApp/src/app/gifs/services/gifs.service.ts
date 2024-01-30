@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,11 +6,15 @@ import { Injectable } from '@angular/core';
 })
 export class GifsService {
 
+  private apiKey: string = "yjGnI6lLOf3jlz2EP6aiMulk5q4r3A2I";
   private _historial: string[] = []
 
+  public resultados: any[] = [];
   get historial(){
     return[...this._historial];
   }
+
+  constructor(private http: HttpClient){} //Con este http ya puedo hacer peticiones
 
   buscarGifs(query:string){
     // Verificar si el query ya está en el historial
@@ -22,7 +27,19 @@ export class GifsService {
 
       console.log(this._historial);
     }
+
+    this.http.get(`https://api.giphy.com/v1/gifs/search?api_key=yjGnI6lLOf3jlz2EP6aiMulk5q4r3A2I&q=${ query }&limit=10`)
+    .subscribe((resp: any) => {
+      console.log(resp.data);
+      this.resultados = resp.data;
+    })
+
+/*
+    fetch("https://api.giphy.com/v1/gifs/search?api_key=yjGnI6lLOf3jlz2EP6aiMulk5q4r3A2I&q=dragon ball z&limit=10")
+    .then(resp =>{
+      resp.json().then(data => {
+        console.log(data); //lo pasamos a JSON
+      })
+    })*/
   }
-
-
 }
