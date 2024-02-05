@@ -1,0 +1,4 @@
+/* styles.css o styles.scss */
+
+@import 'primeng/resources/primeng.min.css';
+@import 'primeng/resources/themes/vela-purple/theme.css';

@@ -1,19 +1,16 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { PrimeNgModule } from './prime-ng.module';
 
-//PrimeNg
-import {ButtonModule} from 'primeng/button';
 
-//card
-import { CardModule } from 'primeng/card';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, ButtonModule, CardModule],
+  imports: [CommonModule, RouterOutlet, PrimeNgModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'pipesApp';
