@@ -5,6 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrimeNgModule } from './prime-ng/prime-ng.module';
 
+//Módulos personalizados
+import { SharedModule } from './shared/shared.module';
+import { AppRouterModule } from './app-router.module';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -12,7 +16,9 @@ import { PrimeNgModule } from './prime-ng/prime-ng.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PrimeNgModule
+    PrimeNgModule,
+    SharedModule,
+    AppRouterModule
   ],
   providers: [
     provideClientHydration()
