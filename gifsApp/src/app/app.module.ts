@@ -20,8 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     SharedModule,
     GifsModule,
-
-    HttpClientModule
+    HttpClientModule,
 
   ],
   providers: [

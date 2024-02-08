@@ -1,1 +1,128 @@
-<p>no-comunes works!</p>
+<div class="text-layout">
+  <h1>Pipes no tan comunes</h1>
+  <p>Pipes incluidos en Angular - usualmente en el Common Module.</p>
+</div>
+
+<div class="grid">
+  <div class="col">
+    <p-fieldset legend="Header" [toggleable]="true"> Content </p-fieldset>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="col">
+    <!-- Fieldset para i18nSelect Pipe -->
+    <p-fieldset legend="i18nSelect Pipe" [toggleable]="true" [@bubbleAnimation]>
+      Saludos {{ nombre }}, es un placer {{ gender | i18nSelect : inviteMap }} a
+      nuestro evento <br /><br />
+      <button
+        pButton
+        (click)="cambiarCliente()"
+        label="Cambiar persona"
+      ></button>
+    </p-fieldset>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="col">
+    <!-- Fieldset para i18nPlural -->
+    <p-fieldset legend="i18nPlural" [toggleable]="true" [@bubbleAnimation]>
+      Actualmente Tenemos
+      {{ clientes.length | i18nPlural : mensageMapping }} esperando <br /><br />
+      <button
+        pButton
+        (click)="borrarCliente()"
+        label="Borrar todos los clientes"
+        style="margin-right: 10px"
+      ></button>
+      <button
+        pButton
+        (click)="borrarUnCliente()"
+        label="Borrar un cliente"
+      ></button>
+    </p-fieldset>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="col">
+    <!-- Fieldset para i18nPlural -->
+    <p-fieldset legend="Slice Pipe" [toggleable]="true" [@bubbleAnimation]>
+      <b> Original </b>
+      <pre>{{ clientes }}</pre>
+      <b> Slice: 0:2 </b>
+      <pre>{{ clientes | slice : 0 : 2 }}</pre>
+      <b> Slice: 1:2 </b>
+      <pre>{{ clientes | slice : 1 : 2 }}</pre>
+      <b> Slice: 1:3 </b>
+      <pre>{{ clientes | slice : 1 : 3 }}</pre>
+      <b> Slice: 3:3 </b>
+      <pre>{{ clientes | slice : 3 : 3 }}</pre>
+      <b> Slice: 3:4 </b>
+      <pre>{{ clientes | slice : 3 : 4 }}</pre>
+      <b> Slice: 4:5 </b>
+      <pre>{{ clientes | slice : 4 : 5 }}</pre>
+      <b> Slice: 5:6 </b>
+      <pre>{{ clientes | slice : 5 : 6 }}</pre>
+    </p-fieldset>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="col">
+    <!-- Fieldset para i18nPlural -->
+    <p-fieldset legend="KeyValue Pipe" [toggleable]="true" [@bubbleAnimation]>
+      <!--El ngFor solo soporta elementos que sean iterables, como un array
+      pero no le podemos mandar directamante un objeto-->
+      <ul>
+        <li *ngFor="let item of persona | keyvalue">
+          {{ item.key }}: {{ item.value }}
+        </li>
+      </ul>
+    </p-fieldset>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="col">
+    <!-- Fieldset para i18nPlural -->
+    <p-fieldset legend="Json Pipe" [toggleable]="true" [@bubbleAnimation]>
+
+      <pre>
+        {{persona | json}}
+      </pre>
+    </p-fieldset>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="col">
+    <!-- Fieldset para i18nPlural -->
+    <p-fieldset legend="Json Pipe" [toggleable]="true" [@bubbleAnimation]>
+
+      <pre>
+        {{heroes | json}}
+      </pre>
+    </p-fieldset>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="col">
+    <!-- Fieldset para i18nPlural -->
+    <p-fieldset legend="Async Pipe" [toggleable]="true" [@bubbleAnimation]>
+
+      <pre>
+        {{miObservable | async }}
+      </pre>
+      <pre *ngIf="!(valorPromesa | async)">
+        Resolviendo promesa...
+      </pre>
+
+      <pre>
+        {{valorPromesa | async }}
+      </pre>
+    </p-fieldset>
+  </div>
+</div>

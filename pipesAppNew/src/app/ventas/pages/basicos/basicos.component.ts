@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class BasicosComponent {
 
+  //creamos 3 propiedades
+  nombreLower: string = "David";
+  nombreUpper: string = "DAVID";
+  nombreCompleto: string = "DaviD PAredeS Rodríguez";
+
+  //Propiedad fecha
+  fecha: Date = new Date(); //dia de hoy
+
 }

@@ -33,6 +33,10 @@ export class MenuComponent implements OnInit {
           routerLink: ""
         }
       ]
+     },
+     {
+      label: "Pipes personalizados",
+      icon: "pi pi-th-large",
      }
     ];
   }
