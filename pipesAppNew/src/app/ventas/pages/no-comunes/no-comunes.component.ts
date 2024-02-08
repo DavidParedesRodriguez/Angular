@@ -8,6 +8,7 @@ import {
 } from '@angular/animations';
 import { interval } from 'rxjs';
 
+
 @Component({
   selector: 'app-no-comunes',
   templateUrl: './no-comunes.component.html',

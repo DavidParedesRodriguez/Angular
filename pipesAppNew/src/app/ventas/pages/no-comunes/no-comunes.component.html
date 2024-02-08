@@ -108,15 +108,20 @@
   </div>
 </div>
 
+<!--el servidor tarda demasiado en resolver la promesa o en emitir un valor observable., el servidor local se me queda bloqueado y no carga
+Por eso lo he comentado para que puedas ver que todo lo demás si funciona-->
+
+ <!-- Fieldset para i18nPlural -->
+<!--
 <div class="grid">
   <div class="col">
-    <!-- Fieldset para i18nPlural -->
+
     <p-fieldset legend="Async Pipe" [toggleable]="true" [@bubbleAnimation]>
 
       <pre>
         {{miObservable | async }}
       </pre>
-      <pre *ngIf="!(valorPromesa | async)">
+      <pre *ngIf="(valorPromesa | async)">
         Resolviendo promesa...
       </pre>
 
@@ -126,3 +131,29 @@
     </p-fieldset>
   </div>
 </div>
+-->
+
+<!---------------------------------------------------------Segunda solucion-------------------------------------------------->
+<!-- Fieldset para i18nPlural -->
+<!--
+<div class="grid">
+  <div class="col">
+
+    <p-fieldset legend="Async Pipe" [toggleable]="true" [@bubbleAnimation]>
+      <ng-container *ngIf="miObservable | async as datos; else cargando">
+        <pre>{{ datos }}</pre>
+      </ng-container>
+      <ng-template #cargando>
+        <p>Cargando datos...</p>
+      </ng-template>
+
+      <pre *ngIf="(valorPromesa | async) as valor; else promesaCargando">
+        {{ valor }}
+      </pre>
+      <ng-template #promesaCargando>
+        <p>Resolviendo promesa...</p>
+      </ng-template>
+    </p-fieldset>
+  </div>
+</div>
+-->
